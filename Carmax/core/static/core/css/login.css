@@ -1,0 +1,67 @@
+.login{
+    background: url(../img/login-background.jpg) no-repeat center center;
+    position: sticky;
+    background-size: cover;
+    min-height: 80vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.login-box{
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 22em;
+    height: 22em;
+    background: #10143A;
+    border: 1px solid black
+
+}
+.login-box h3{
+    margin-top: 3%;
+    font-weight: bold;
+}
+.login-box label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+.login-box input {
+margin-bottom: 5%;
+width: 80%;
+}
+.login-box input[type="text"],
+.login-box input[type="password"] {
+border: none;
+background: transparent;
+border-bottom: 1px solid #fff;
+outline: none;
+height: 40px;
+color: white;
+font-size: 1em;
+}
+.login-box input[type="submit"] {
+background-color: blue;
+color: white;
+border: none;
+outline: none;
+height: 2.5em;
+font-size: 1.2em;
+border-radius: 20px;
+}
+
+.login-box a {
+    text-decoration: none;
+    font-size: 0.8em;
+    line-height: 2em;
+    color: darkgrey
+}
+
+.login-box a:hover {
+   color: white
+}

@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="login">
+<div class="login-box">
+    <h3>Ingrese sus datos</h3>
+    <form>
+        <label for="Email">Email</label>
+        <input type="text" placeholder="Ingrese su Email">
+
+        <label for="contraseña">Contraseña</label>
+        <input type="password" placeholder="Ingrese su contraseña">
+
+        <input type="submit" value="Ingresar"><br>
+
+    <a href="#">No recuerdas tu clave?</a><br>
+    <a href="#">No tienes una cuenta?</a>
+    </form>
+</div>  
+</div>
+{% endblock %}

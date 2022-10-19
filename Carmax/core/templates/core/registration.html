@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Registración{% endblock %}
+
+{% block content %}
+<div class="registration">
+<div class="registration-box">
+    <h3>Ingrese sus datos</h3>
+    <form>
+        <label for="nombre">Nombre</label>
+        <input type="text" placeholder="Ingrese su nombre">
+
+        <label for="apellido">Apellido</label>
+        <input type="text" placeholder="Ingrese su apellido">
+
+        <label for="Email">Email</label>
+        <input type="text" placeholder="Ingrese su Email">
+
+        <label for="contraseña">Contraseña</label>
+        <input type="password" placeholder="Ingrese su contraseña">
+
+        <label for="contraseña">Reingrese la contraseña</label>
+        <input type="password" placeholder="Reingrese la contraseña">
+
+        <input type="submit" value="Registrarme"><br>
+    </form>
+</div>
+</div>
+{% endblock %}

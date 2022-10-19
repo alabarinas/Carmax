@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="main-landing">
+    <div class="landing-content">
+       <h1>Carmax</h1>
+       <h2>Reparar tu auto al alcance de tu mano</h2>
+   </div>
+</div>
+
+<div class="nosotros-landing" id="nosotros">
+   <div class="nosotros-content">
+       <h3>¿Que es Carmax?</h3>
+       <p>Somos un taller creado hace 15 años en el barrio de Palermo, que comenzó siendo un lubricentro y a medida que los clientes fueron necesitando otros servicios decidimos extendernos para brindarles ayuda y poder solucionar otros tipo de complicaciones.<br>
+           Así conseguimos ampliar nuestras actividades convirtiendonos en uno de los mejores y más completos talleres de la zona</p>
+   </div>
+</div>
+
+<div class="servicios-landing" id="servicios">
+   <div class ="servicios-content">
+       <h3>Nuestros servicios</h3>
+   </div>
+   <div class="row">
+       <div class="col-md-3">
+           <h5>Cambio de aceite</h5>
+           <img src="{% static 'core/img/cambio-aceite.jpg' %}" alt="Cambio aceite">
+       </div>
+       <div class="col-md-3">
+           <h5>Reparación de motor</h5>
+           <img src="{% static 'core/img/reparacion-motor.jpg' %}" alt="Reparacion de motor">
+
+       </div>
+       <div class="col-md-3">
+           <h5>Mantenimiento general</h5>
+           <img src="{% static 'core/img/mantenimiento-general.png' %}" alt="Mantenimiento general">
+
+       </div>
+       <div class="col-md-3">
+           <h5>Revisión de bateria</h5>
+           <img src="{% static 'core/img/bateria.jpg' %}" alt="Cambio bateria">
+
+       </div>
+   </div>
+</div>
+{% endblock %}

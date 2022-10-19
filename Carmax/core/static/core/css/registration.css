@@ -1,0 +1,67 @@
+.registration{
+    background: url(../img/login-background.jpg) no-repeat center center;
+    position: sticky;
+    background-size: cover;
+    min-height: 80vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.registration-box{
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 23em;
+    height: 33em;
+    background: #10143A;
+    border: 1px solid black
+
+}
+.registration-box h3{
+    margin-top: 3%;
+    font-weight: bold;
+}
+.registration-box label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+.registration-box input {
+margin-bottom: 5%;
+width: 80%;
+}
+.registration-box input[type="text"],
+.registration-box input[type="password"] {
+border: none;
+background: transparent;
+border-bottom: 1px solid #fff;
+outline: none;
+height: 40px;
+color: white;
+font-size: 1em;
+}
+.registration-box input[type="submit"] {
+background-color: blue;
+color: white;
+border: none;
+outline: none;
+height: 2.5em;
+font-size: 1.2em;
+border-radius: 20px;
+}
+
+.registration-box a {
+    text-decoration: none;
+    font-size: 0.8em;
+    line-height: 2em;
+    color: darkgrey
+}
+
+.registration-box a:hover {
+   color: white
+}

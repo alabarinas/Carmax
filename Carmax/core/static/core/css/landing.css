@@ -1,0 +1,30 @@
+.main-landing{
+    min-height: 90vh;
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/landing.jpg) no-repeat center center;
+    position: sticky;
+    background-size: cover;
+}
+.landing-content{
+    text-align: center;
+    font-family: "Open Sans";
+}
+.landing-content h1{
+    font-size: 5em;
+}
+.landing-content h2{
+    margin: 0 0 20px 0;
+    font-size: 3em;
+}
+.landing-content h1,h2{
+    color: black;
+}
+.main-btn{
+    padding: 15px;
+    border-radius: 4px;
+    background-color: rgb(255, 136, 0);
+    box-sizing: border-box;
+}

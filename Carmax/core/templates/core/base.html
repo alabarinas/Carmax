@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- Estilos y fuentes del template  -->
+    {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link href="{% static 'core/css/landing.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/header.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/footer.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/nosotros.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/servicios.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/registration.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/login.css' %}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e50979f189.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container nav-container">
+          <h1> <a href="{% url 'landing' %}">Carmax</a></h1>
+          <nav class="navigation">
+            <ul>
+              <li><a href="#nosotros">Nosotros</a></li>
+              <li><a href="{% url 'servicios' %}">Servicios</a></li>
+              <li><a href="{% url 'registracion' %}">Registrarse</a></li>
+              <li><a href="{% url 'login' %}">Ingresar</a></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+
+        {% block content %}{% endblock %}
+
+    <!-- Pié de página -->
+    <footer>
+        <div class="container">
+          <p>Copyright © Carmax 2022</p>
+          <div class="socialMedia">
+            <i class="fa-brands fa-facebook fa-2x"></i>
+            <i class="fa-brands fa-twitter fa-2x"></i>
+            <i class="fa-brands fa-instagram fa-2x"></i>
+          </div>
+          <div class="footer-text">
+          <a href="#">Política de Privacidad</a>
+          <a href="#">Términos y Condiciones</a>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>
