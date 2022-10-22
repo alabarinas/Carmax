@@ -8,15 +8,13 @@
 
     <!-- Estilos y fuentes del template  -->
     {% load static %}
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-    integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <link href="{% static 'core/css/landing.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/header.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/footer.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/nosotros.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/servicios.css' %}" rel="stylesheet">
-    <link href="{% static 'core/css/registration.css' %}" rel="stylesheet">
-    <link href="{% static 'core/css/login.css' %}" rel="stylesheet">
+    <link href="{% static 'registration/css/signup.css' %}" rel="stylesheet">
+    <link href="{% static 'registration/css/login.css' %}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e50979f189.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -28,8 +26,12 @@
             <ul>
               <li><a href="#nosotros">Nosotros</a></li>
               <li><a href="{% url 'servicios' %}">Servicios</a></li>
-              <li><a href="{% url 'registracion' %}">Registrarse</a></li>
+              {% if not request.user.is_authenticated %}
               <li><a href="{% url 'login' %}">Ingresar</a></li>
+              <li><a href="{% url 'signup' %}">Registrarse</a></li>
+              {% else %}
+              <li><a href="{% url 'logout' %}">Salir</a></li>
+              {% endif %}
             </ul>
           </nav>
         </div>

@@ -9,9 +9,3 @@ def nostros(request):
 
 def servicios(request):
     return render(request, "core/servicios.html")
-
-def registracion(request):
-    return render(request, "core/registration.html")
-
-def login(request):
-    return render(request, "core/login.html")
