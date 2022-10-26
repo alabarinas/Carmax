@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 .main-landing{
     min-height: 90vh;
     min-width: 100%;
@@ -27,4 +31,13 @@
     border-radius: 4px;
     background-color: rgb(255, 136, 0);
     box-sizing: border-box;
+}
+
+.row.service{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.row.service div{
+    padding: 0 30px;
 }
