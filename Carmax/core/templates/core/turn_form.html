@@ -1,0 +1,23 @@
+{% extends 'core/base.html' %}
+{% block content %}      
+<div class="login">
+    <div class="login-box">
+        <h3>Ingrese sus datos</h3>
+        <form action='' method="post">
+            {% csrf_token %}
+           {% comment %}  
+           <label for="Servicio">Servicio</label>
+            <select name="Servicio">
+            {% for id, name in form.Servicio.field.choices %}
+
+            {% endfor %} 
+            </select> 
+            {% endcomment %}
+        
+        {{ form.as_p }}
+
+            <input type="submit" value="Ingresar"><br>
+        </form>
+    </div>  
+</div>
+{% endblock %}

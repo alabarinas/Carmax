@@ -19,6 +19,7 @@ from core import views
 
 urlpatterns = [
     path('', views.landing, name="landing"),
+    path('reservation/', views.turn_form, name="reservation"),
     path('about/', views.nostros, name="nosotros"),
     path('services/', views.servicios, name="servicios"),
     path('admin/', admin.site.urls),
