@@ -43,8 +43,16 @@ class Turn(models.Model):
     
 
     def __str__(self):
-        return '{} {} {}. Cliente: {}'.format(self.date, self.service, self.timeblock, self.user)
+        return '{} {} {}. Cliente: {}'.format(self.date, self.service, self.timeblock, self.user.email)
 
     @property
     def time(self):
         return self.TIME_LIST[self.timeblock][1]
+
+    def get_cancel_turn_url(self):
+        return reverse(
+            "cancel-reservation",
+            args=[
+                self.pk,
+            ],
+        )

@@ -17,9 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 from core import views
 
+app_name = 'core'
+
 urlpatterns = [
     path('', views.landing, name="landing"),
-    path('reservation/', views.turn_form, name="reservation"),
+    path('reservation/', views.new_turn, name="reservation"),
+    path('reservation/edit/', views.edit_turn, name="edit-reservation"),
+    path("reservation/cancelation/<pk>", views.CancelTurnView.as_view(), name= "cancel-reservation"),
+    path('turn_list/', views.TurnListView.as_view(), name="my-turns"),
     path('about/', views.nostros, name="nosotros"),
     path('services/', views.servicios, name="servicios"),
     path('admin/', admin.site.urls),

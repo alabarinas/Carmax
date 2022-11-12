@@ -1,0 +1,23 @@
+
+.my-turns {
+    text-align: center;
+}
+.turns {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: 10px;
+    text-align: center;
+    align-items: center;
+}
+
+.turn {
+    align-items: center;
+    text-align: center;
+    margin: 1%;
+    background: wheat;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 25%;
+    padding: 1%;
+}
