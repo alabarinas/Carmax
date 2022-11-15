@@ -22,7 +22,6 @@ app_name = 'core'
 urlpatterns = [
     path('', views.landing, name="landing"),
     path('reservation/', views.new_turn, name="reservation"),
-    path('reservation/edit/', views.edit_turn, name="edit-reservation"),
     path("reservation/cancelation/<pk>", views.CancelTurnView.as_view(), name= "cancel-reservation"),
     path('turn_list/', views.TurnListView.as_view(), name="my-turns"),
     path('about/', views.nostros, name="nosotros"),

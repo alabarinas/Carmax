@@ -1,8 +1,9 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.views.generic import ListView, DeleteView
-from django.urls import reverse_lazy
-
+from django.contrib.auth.decorators import login_required
+from django.urls import reverse_lazy, reverse
+from django.http import HttpResponseRedirect
 from .models import Turn
 from .forms import BookingForm
 
@@ -20,11 +21,6 @@ def turn_form(request):
     context = {}
     context['form']= BookingForm()
     return render(request, "core/turn_form.html", context)
-
-def edit_form(request):
-    context = {}
-    context['form']= BookingForm()
-    return render(request, "core/edit_turn.html", context)
 
 def new_turn(request):
     turn_form = BookingForm
@@ -51,9 +47,11 @@ def new_turn(request):
                     )
                     return redirect('/')
                 else:
-                    return HttpResponse("Este horario esta ocupado!")
+                    #return HttpResponse("Este horario esta ocupado!")
+                    return HttpResponseRedirect(reverse_lazy('reservation') + '?invalid-time')
             else:
-                return HttpResponse("No existen turnos disponibles este dia!")
+                #return HttpResponse("No existen turnos disponibles este dia!")
+                return HttpResponseRedirect(reverse_lazy('reservation') + '?invalid-date')
     return render(request=request, template_name="core/turn_form.html", context={"form": form},)
 
 def check_day_availability(date):
@@ -115,33 +113,3 @@ class CancelTurnView(DeleteView):
     model = Turn
     template_name = "core/cancel_turn_view.html"
     success_url = reverse_lazy("my-turns")
-
-def edit_turn(request):
-    turn_form = BookingForm
-    form = turn_form(request.POST or None)
-    if request.method == 'POST':
-        if form.is_valid():
-            data = form.cleaned_data
-            available_day_turn = check_day_availability(
-                data["date"],
-            )
-            if available_day_turn is True:
-                available_turn = check_availability(
-                    data["date"],
-                    data["timeblock"],
-                )
-
-                if available_turn is True:
-                    book_turn(
-                    request, 
-                    data["date"],
-                    data["timeblock"],
-                    data["service"].id,
-                    request.user.id,
-                    )
-                    return redirect('/')
-                else:
-                    return HttpResponse("Este horario esta ocupado!")
-            else:
-                return HttpResponse("No existen turnos disponibles este dia!")
-    return render(request=request, template_name="core/turn_form.html", context={"form": form},)

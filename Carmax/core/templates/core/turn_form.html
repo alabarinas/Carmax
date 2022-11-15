@@ -1,14 +1,23 @@
 {% extends 'core/base.html' %}
 {% block content %}      
-<div class="login">
-    <div class="login-box">
+<div class="turn-form">
+    <div class="turn-box">
         <h3>Ingrese sus datos</h3>
         <form action='' method="post">
             {% csrf_token %}
         
-        {{ form.as_p }}
+            {{ form.as_p }}
 
             <input type="submit" value="Ingresar"><br>
+
+            <div class= "invalid-turn"> 
+            {% if 'invalid-time' in request.GET %}
+            <p>El horario no se encuentra disponible </p>        
+            {% endif %}
+            {% if 'invalid-date' in request.GET %}
+            <p>En este dia no se encuentra ningun turno disponible</p>        
+            {% endif %}
+            </div>
         </form>
     </div>  
 </div>

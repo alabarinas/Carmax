@@ -3,18 +3,20 @@
 {% block title %}Cancelar turno{% endblock %}
 
 {% block content %}
-    <div class="cancel-turn">
-            <form action="" method="POST">
-                {% csrf_token %}
-                <h1>Usted esta por eliminar la siguiente reserva</h1>
-                <h3>Fecha: {{turn.date}}</h3>
-                <h3>Horario: {{turn.get_timeblock_display}}</h3>
-                <h3>Servicio: {{turn.service}}</h3>
-                <h2>Si confirma con el siguiente boton se cancelara su turno</h2>
+<div class="cancel-turn">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class = "cancel-form">
+            <h1>Usted esta por eliminar la siguiente reserva</h1>
+            <h3>Fecha: {{turn.date}}</h3>
+            <h3>Horario: {{turn.get_timeblock_display}}</h3>
+            <h3>Servicio: {{turn.service}}</h3>
+            <h2>Si confirma con el siguiente boton se cancelara su turno</h2>
 
-                <div class=cancel-button>
-                <button type="submit">Cancelar la reserva</button>
-                </div>
-            </form>
-    </div>
+            <div class=cancel-button>
+            <button type="submit">Cancelar la reserva</button>
+            </div>
+        </div>
+    </form>
+</div>
 {% endblock %}

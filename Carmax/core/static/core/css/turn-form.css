@@ -1,0 +1,64 @@
+.turn-form{
+    background: url(../img/reservation-background.jpg) no-repeat center center;
+    background-size: cover;
+    min-height: 80vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.turn-box{
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 22em;
+    background: #10143A;
+    border: 1px solid black
+}
+
+.turn-box label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    display: block;
+}
+.turn-box input {
+margin-bottom: 5%;
+width: 80%;
+}
+.turn-box input[type="date"]{
+border: none;
+background: #1b2263;
+border-bottom: 1px solid #fff;
+outline: none;
+height: 40px;
+color: white;
+font-size: 1em;
+}
+.turn-box select {
+margin-bottom: 5%;
+width: 80%;
+border: none;
+background: #1b2263;
+border-bottom: 1px solid #fff;
+outline: none;
+height: 40px;
+color: white;
+font-size: 1em;
+}
+.turn-box input[type="submit"] {
+background-color: blue;
+color: white;
+border: none;
+outline: none;
+height: 2.5em;
+font-size: 1.2em;
+border-radius: 20px;
+}
+
+.invalid-turn p{
+color: red;
+}

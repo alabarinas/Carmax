@@ -9,11 +9,16 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    color: white;
 }
 .cancel-form{
     align-items: center;
     justify-content: center;
     text-align: center;
+    background: rgb(54, 54, 54);
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 2%;
 }
 .cancel-turn h1{
     font-size: 2em;
@@ -30,15 +35,6 @@
 margin-bottom: 5%;
 width: 80%;
 }
-.cancel-turn input[type="submit"] {
-background-color: blue;
-color: white;
-border: none;
-outline: none;
-height: 2.5em;
-font-size: 1.2em;
-border-radius: 20px;
-}
 
 .cancel-button{
     text-align: center;
@@ -51,4 +47,5 @@ outline: none;
 height: 2.5em;
 font-size: 1.2em;
 border-radius: 20px;
+margin-bottom: 1%;
 }

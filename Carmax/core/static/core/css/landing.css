@@ -18,12 +18,11 @@ body{
 }
 .landing-content h1{
     font-size: 5em;
+    color: black;
 }
 .landing-content h2{
     margin: 0 0 20px 0;
     font-size: 3em;
-}
-.landing-content h1,h2{
     color: black;
 }
 .main-btn{

@@ -1,6 +1,7 @@
 
 .my-turns {
     text-align: center;
+    min-height: 80vh;
 }
 .turns {
     display: flex;

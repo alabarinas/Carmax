@@ -13,6 +13,7 @@
     <link href="{% static 'core/css/footer.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/nosotros.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/servicios.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/turn-form.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/my-turns.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/cancel-turn.css' %}" rel="stylesheet">
     <link href="{% static 'registration/css/registration.css' %}" rel="stylesheet">
@@ -26,13 +27,16 @@
           <h1> <a href="{% url 'landing' %}">Carmax</a></h1>
           <nav class="navigation">
             <ul>
+            {% if request.path == '/' %}
               <li><a href="#nosotros">Nosotros</a></li>
-              <!-- <li><a href="{% url 'servicios' %}">Servicios</a></li> -->
               <li><a href="#servicios">Servicios</a></li>
+              {% endif %}
               {% if not request.user.is_authenticated %}
               <li><a href="{% url 'login' %}">Ingresar</a></li>
               <li><a href="{% url 'signup' %}">Registrarse</a></li>
               {% else %}
+              <li><a href="{% url 'reservation' %}">Reservar</a></li>
+              <li><a href="{% url 'my-turns' %}">Mis Turnos</a></li>
               <li><a href="{% url 'logout' %}">Salir</a></li>
               {% endif %}
             </ul>
