@@ -13,6 +13,8 @@
     <link href="{% static 'core/css/footer.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/nosotros.css' %}" rel="stylesheet">
     <link href="{% static 'core/css/servicios.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/my-turns.css' %}" rel="stylesheet">
+    <link href="{% static 'core/css/cancel-turn.css' %}" rel="stylesheet">
     <link href="{% static 'registration/css/registration.css' %}" rel="stylesheet">
     <link href="{% static 'registration/css/login.css' %}" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e50979f189.js" crossorigin="anonymous"></script>
@@ -25,7 +27,8 @@
           <nav class="navigation">
             <ul>
               <li><a href="#nosotros">Nosotros</a></li>
-              <li><a href="{% url 'servicios' %}">Servicios</a></li>
+              <!-- <li><a href="{% url 'servicios' %}">Servicios</a></li> -->
+              <li><a href="#servicios">Servicios</a></li>
               {% if not request.user.is_authenticated %}
               <li><a href="{% url 'login' %}">Ingresar</a></li>
               <li><a href="{% url 'signup' %}">Registrarse</a></li>
