@@ -30,7 +30,7 @@ class BookingForm(forms.ModelForm):
         day = self.cleaned_data['date']
 
         if day <= date.today():
-            raise forms.ValidationError('No puede elegir un día que ya pasó.', code='invalid')
+            raise forms.ValidationError('No puedes seleccionar un día que ya pasó.', code='invalid')
         if day.isoweekday() in (0, 6):
             raise forms.ValidationError('Nuestro horario de trabajo es de lunes a viernes de 09:00 a 18:00 horas.', code='invalid')
 

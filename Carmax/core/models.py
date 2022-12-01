@@ -43,7 +43,7 @@ class Turn(models.Model):
     
 
     def __str__(self):
-        return '{} {} {}. Cliente: {}'.format(self.date, self.service, self.timeblock, self.user.email)
+        return '{} {} {}. Cliente: {}'.format(self.date, self.service, self.get_timeblock_display(), self.user.email)
 
     @property
     def time(self):

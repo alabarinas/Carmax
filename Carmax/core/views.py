@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
-from django.contrib.auth.models import User
+from datetime import date
 from django.views.generic import ListView, DeleteView
+from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
@@ -25,6 +26,8 @@ def turn_form(request):
 def new_turn(request):
     turn_form = BookingForm
     form = turn_form(request.POST or None)
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect(reverse_lazy('login'))
     if request.method == 'POST':
         if form.is_valid():
             data = form.cleaned_data
@@ -97,19 +100,22 @@ def book_turn(request, date, timeblock, serviceId, userId):
 
     return turn
 
+@method_decorator(login_required, name='dispatch')
 class TurnListView(ListView):
     model = Turn
     template_name = "core/my_turns.html"
 
     def get_queryset(self, *args, **kwargs):
         if self.request.user.is_staff:
-            turn_list = Turn.objects.all()
+            turn_list = Turn.objects.filter(date__gte= date.today()).order_by('date','timeblock')
             return turn_list
         else:
-            turn_list = Turn.objects.filter(user=self.request.user)
+            turn_list = Turn.objects.filter(user=self.request.user, date__gte= date.today()).order_by('date','timeblock')
             return turn_list
 
+@method_decorator(login_required, name='dispatch')
 class CancelTurnView(DeleteView):
     model = Turn
     template_name = "core/cancel_turn_view.html"
     success_url = reverse_lazy("my-turns")
+            
